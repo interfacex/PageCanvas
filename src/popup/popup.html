@@ -1,0 +1,13 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>页绘</title><link rel="stylesheet" href="../ui/base.css"><link rel="stylesheet" href="popup.css"></head><body><main>
+<header><div class="brand"><strong>页绘</strong><span>PageCanvas</span></div><button id="settings" class="icon" aria-label="打开模型设置">设置</button></header>
+<div class="page-row"><span class="page-dot"></span><p id="pageTitle" class="page-title">正在读取当前页面…</p></div>
+<section><div class="section-head"><b>导出范围</b><small>选择需要处理的页面区域</small></div><div class="segment" role="radiogroup" aria-label="导出范围"><button data-range="region" role="radio" aria-checked="false">自由框选</button><button data-range="full" class="selected" role="radio" aria-checked="true">整个页面</button></div></section>
+<section><div class="section-head"><b>内容处理</b><small>选择是否提取并重新组织正文</small></div><div class="processing" role="radiogroup" aria-label="内容处理">
+<button data-processing="direct" class="choice selected" role="radio" aria-checked="true"><span><b>默认 · 直接导出</b><small>保留当前内容与视觉</small></span><i>✓</i></button>
+<button data-processing="traditional" class="choice" role="radio" aria-checked="false"><span><b>传统提取</b><small>纯本地 · 无需 API</small></span><i>✓</i></button>
+<button data-processing="ai" class="choice" role="radio" aria-checked="false"><span><b>AI 智能提取</b><small id="modelState">配置模型后使用</small></span><i>✓</i></button>
+</div></section>
+<details><summary>保存到其他位置 <em>即将支持</em></summary><div class="future"><span>百度网盘</span><span>暂未开放</span></div></details>
+<div class="confirmation"><p id="selectionSummary">整个页面 · 默认直接导出</p><button id="confirmExport" class="button" type="button">开始导出</button></div>
+<div id="status" class="status" role="status"></div>
+</main><script type="module" src="popup.js"></script></body></html>

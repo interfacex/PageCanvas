@@ -1,0 +1,8 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>页绘设置</title><link rel="stylesheet" href="../ui/base.css"><link rel="stylesheet" href="options.css"></head><body><main><header><h1>模型设置</h1><p>配置任意 OpenAI-compatible Chat Completions 服务。</p></header><form id="form">
+<label>API Base URL<input id="baseUrl" name="baseUrl" type="url" placeholder="https://api.openai.com/v1" required></label>
+<label>API Key<input id="apiKey" name="apiKey" type="password" autocomplete="off" required></label>
+<label>模型<input id="model" name="model" placeholder="gpt-4.1-mini" required></label>
+<label>自定义请求头（JSON）<textarea id="headers" name="headers" rows="4">{}</textarea></label>
+<label>最大输入字符数<input id="maxChars" name="maxChars" type="number" min="4000" max="120000" value="60000"></label>
+<div class="actions"><button class="button" type="submit">保存配置</button><button id="testConnection" class="button secondary" type="button">测试连接</button></div><p id="status" class="status" role="status"></p>
+</form><aside><b>隐私说明</b><p>API Key 仅保存在本机浏览器中。只有主动使用 AI 智能提取时，清洗后的网页文本才会发送到你配置的服务。</p></aside></main><script type="module" src="options.js"></script></body></html>

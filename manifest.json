@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "页绘 PageCanvas",
+  "version": "1.0.14",
+  "description": "完整截取网页，或通过传统算法与大模型提取核心内容后导出为图片。",
+  "permissions": ["activeTab", "scripting", "storage", "downloads", "clipboardWrite"],
+  "optional_host_permissions": ["https://*/*", "http://localhost/*", "http://127.0.0.1/*"],
+  "background": { "service_worker": "src/background/service-worker.js", "type": "module" },
+  "action": { "default_popup": "src/popup/popup.html", "default_title": "页绘 PageCanvas" },
+  "options_page": "src/options/options.html",
+  "content_scripts": [{ "matches": ["http://*/*", "https://*/*", "file:///*"], "js": ["src/shared/ai-progress.js", "src/content/region-ai-progress.js", "src/content/content-script.js"], "run_at": "document_idle" }],
+  "icons": { "16": "assets/icon-16.png", "32": "assets/icon-32.png", "48": "assets/icon-48.png", "128": "assets/icon-128.png" }
+}
